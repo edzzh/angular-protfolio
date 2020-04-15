@@ -1,0 +1,28 @@
+<div class="ui comments">
+  <form class="ui reply form"
+        [formGroup]="commentForm"
+        (ngSubmit)="onSubmit(commentForm.value)"
+  >
+    <div class="ui input field labeled">
+      <div class="ui label black">
+        Username:
+      </div>
+      <input
+        type="text"
+        name="username"
+        formControlName="username"
+      />
+    </div>
+    <div class="field">
+      <textarea
+        name="comment"
+        formControlName="comment"
+      ></textarea>
+    </div>
+    <button type="submit" class="ui blue labeled submit icon button">
+      <i class="icon edit"></i> Add Comment
+    </button>
+  </form>
+  <h3 class="ui dividing header">Comments</h3>
+  <app-comment-list [comments]="comments"></app-comment-list>
+</div>

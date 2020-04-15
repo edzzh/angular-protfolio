@@ -1,0 +1,16 @@
+<div *ngIf="loading" class="ui raised very text container segment">
+  <p>Loading...</p>
+</div>
+
+<div *ngIf="photo" class="ui raised very padded text container segment" style="margin-bottom: 20px;">
+  <h2 class="ui header centered">
+    {{(photo.description !== null) ? photo.description : "No Title"}}
+  </h2>
+  <img class="ui image centered large"
+       [src]="photo.urls.full"
+       [alt]="photo.alt_description"
+  />
+  <app-comment-section
+    [photo]="photo"
+  ></app-comment-section>
+</div>

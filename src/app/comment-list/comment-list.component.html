@@ -1,0 +1,13 @@
+<div *ngIf="!comments">No Comments Found...</div>
+
+<div class="comment" *ngFor="let comment of comments">
+  <div class="content">
+    <a class="author">{{comment.username}}</a>
+    <div class="metadata">
+      <span class="date">{{comment.timestamp}}</span>
+    </div>
+    <div class="text">
+      {{comment.comment}}
+    </div>
+  </div>
+</div>

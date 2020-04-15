@@ -1,0 +1,18 @@
+<div class="ui segment">
+  <div class="ui list">
+    <p *ngIf="loading">Loading...</p>
+
+    <div
+      class="item"
+      *ngFor="let photo of photos;"
+      style="cursor: pointer;"
+    >
+      <a [routerLink]="['/gallery', photo.id]">
+        <img [src]="photo.urls.full"
+             [alt]="photo.alt_description"
+             class="ui image fluid"
+        />
+      </a>
+    </div>
+  </div>
+</div>
