@@ -12,7 +12,7 @@ export class CommentSectionComponent implements OnInit {
   private commentsService: CommentsService;
   private formBuilder: FormBuilder;
   public commentForm;
-  public comments;
+  public comments = [];
   @Input() photo;
 
   constructor(commentsService: CommentsService, formBuilder: FormBuilder) {

@@ -1,4 +1,4 @@
-<div *ngIf="!comments">No Comments Found...</div>
+<div *ngIf="comments.length === 0">No Comments Found...</div>
 
 <div class="comment" *ngFor="let comment of comments">
   <div class="content">
