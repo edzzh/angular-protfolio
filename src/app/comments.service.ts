@@ -11,7 +11,7 @@ export class CommentsService {
     this.databaseRef = firebase.firestore().collection('comments');
   }
 
-  public async fetchComments(photoId) {
+  public async fetchComments(photoId: string) {
     const comments = [];
     const querySnapshot = await this.databaseRef.get();
 
