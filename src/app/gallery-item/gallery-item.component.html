@@ -4,7 +4,7 @@
 
 <div *ngIf="photo" class="ui raised very padded text container segment" style="margin-bottom: 20px;">
   <h2 class="ui header centered">
-    {{(photo.description !== null) ? photo.description : "No Title"}}
+    {{(photo.description !== null) ? photo.description.toUpperCase() : "No Title"}}
   </h2>
   <img class="ui image centered large"
        [src]="photo.urls.full"

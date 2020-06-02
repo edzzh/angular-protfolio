@@ -36,12 +36,14 @@ export class CommentSectionComponent implements OnInit {
       photo_id: this.photo.id
     };
 
-    this.commentsService.addCommentToDatabase(data).then(() => {
-      this.commentForm.reset();
-      this.commentsService.fetchComments(this.photo.id).then(comments => {
-        this.comments = this.sortCommentsByTime(comments);
+    if (data.username !== '' && data.comment !== '') {
+      this.commentsService.addCommentToDatabase(data).then(() => {
+        this.commentForm.reset();
+        this.commentsService.fetchComments(this.photo.id).then(comments => {
+          this.comments = this.sortCommentsByTime(comments);
+        });
       });
-    });
+    }
   }
 
   sortCommentsByTime(comments) {
